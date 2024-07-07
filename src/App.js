@@ -6,6 +6,7 @@ import About from './Components/About';
 import Contact from './Components/Contact';
 import Blog from './Components/Blog';
 import Post from './Components/Post';
+import NotFound from './Components/NotFound';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/post/:postId" element={<Post />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
