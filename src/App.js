@@ -1,34 +1,23 @@
-import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import './Styles/App.css';
-import Home from './Components/Home';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import Blog from './Components/Blog';
-import Post from './Components/Post';
-import NotFound from './Components/NotFound';
+import React from "react";
+import "./styles/app.scss";
+import { Routes, Route, Navigate, HashRouter } from "react-router-dom";
+import About from "./pages/about/About";
+import Home from "./pages/home/Home";
+import FichLogement from "./pages/logement/FichLogment";
+import NoPage from "./pages/error/NoPage";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
-        </ul>
-      </nav>
+    <HashRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Navigate replace to="/accueil" />} />
+        <Route path="/accueil" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/blog/post/:postId" element={<Post />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/logement/:id" element={<FichLogement />} />
+        <Route path="*" element={<NoPage />} />
       </Routes>
-    </div>
+    </HashRouter>
   );
-}
+};
 
 export default App;
