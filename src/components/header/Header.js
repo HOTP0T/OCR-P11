@@ -9,9 +9,9 @@ export default function Header() {
       <figure className="header__fig">
 
         <a href="#">
-
       <img className="logo" src={logo} alt="logo de l'agence kasa" />
         </a>
+        
       </figure>
       <Nav className="nav-header" />
     </header>
