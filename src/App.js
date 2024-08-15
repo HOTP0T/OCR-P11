@@ -5,10 +5,12 @@ import About from "./pages/about/About";
 import Home from "./pages/home/Home";
 import FichLogement from "./pages/logement/FichLogment";
 import NoPage from "./pages/error/NoPage";
+import Nav from "../src/components/nav/Nav.js"; // Import your Nav component
 
 const App = () => {
   return (
     <HashRouter>
+       {/* Include the Nav component here */}
       <Routes>
         <Route path="/" element={<Navigate replace to="/accueil" />} />
         <Route path="/accueil" element={<Home />} />
